@@ -1,0 +1,169 @@
+<html>
+  <head>
+    <title>Task 11</title>
+  </head>
+  <style>
+    body{
+    background-image: linear-gradient(#e2eab6, rgb(250, 129, 232));
+      padding-left: 30em;
+      padding-top: 2em;
+     }
+     .error{
+      color: brown;
+     }
+     .c2{
+      text-align: right;
+     }
+  </style>
+  <body>
+    <form name="student_reg" method="POST" action="" onsubmit="return validateForm()">
+                <h1>Registration Form</h1>
+                <p></p>
+                <table>
+                    <tr>
+                   <td><p><b>First Name:</b></p></td>
+                   <td><input type="text" name="name" value="" >
+                   <span class="error"><p id="name_error"></p></span></td>
+                </tr>
+                    <tr>
+                   <td><p><b>Last Name:</b></p></td>
+                   <td><input type="text" name="lname" value="" >
+                   <span class="error"><p id="lname_error"></p></span></td>
+                </tr>
+
+   <tr>
+                   <td><p><b>Email:</b></p></td>
+                   <td><input type="text" name="email" value="" >
+                   <span class="error"><p id="email_error"></p></span></td>
+                </tr>
+                 <tr>
+                   <td><p><b>Password:</b></p></td>
+                   <td><input type="text" name="password" value="" >
+                   <span class="error"><p id="password_error"></p></span></td>
+                </tr>
+
+                  <tr>
+                   <td><p><b>Re-Enter Password</b></p></td>
+                   <td><input type="password" name="repassword" value="" >
+                   <span class="error"><p id="repassword_error"></p></span></td></tr>
+
+                   <tr>
+                   <td><p><b>Gender:</b></p></td>
+                   <td><input type="radio" name="gender"> Male
+                   <p><input type="radio" name="gender"> Female</p></td></tr>
+
+                  <tr>
+                   <td><p><b>Age:</b></p></td>
+                   <td><input type="number" name="age" value="" >
+                   <span class="error"><p id="age_error"></p></span></td></tr>
+                 <tr>
+                   <td><p><b>Phone No:</b></p></td>
+                   <td><input type="number" name="phone_no" value="" >
+                   <span class="error"><p id="phone_no_error"></p></span></td></tr>
+                  <tr>
+                   <td><p><b>Adrress:</b></p></td>
+                   <td><textarea name="addr" value=""></textarea>
+                   <span class="error"><p id="addr_error"></p></span></td></tr>
+                <tr>
+                   <td><p><b>State:</b></p></td>
+                   <td><input type="text" name="state" value="" >
+                   <span class="error"><p id="state_error"></p></span></td></tr>
+
+                  <tr><td><p><b>Country:</b></td>
+                    <td><select><option>Choose Your Country</option></select></p></td></tr>
+                   <tr>
+                   <td><b>Languages known:</b></td>
+                   <td><input type="checkbox" name="lang">English
+                   <input type="checkbox" name="lang">Kannada
+                   <input type="checkbox" name="lang">Hindi
+                   <input type="checkbox" name="lang">Telugu</td>
+                </tr>
+            </table>
+
+                   <p><input type="checkbox" checked>Hereby I Declare all the given details are true</p>
+
+                   <br/>
+                   <br/>
+                   <br/>
+   
+                   <input type="submit" name="submit" value="Register">
+                   <div class="c2"><p>Login to <a href="https://ethnus.com/">Ethnus</a>Website</p></div>
+                   
+   
+    </form>
+
+    </body>
+    <script>
+      function validateForm() {
+    var error = 0;
+    var a = document.forms["student_reg"]["name"].value;
+    document.getElementById('name_error').innerHTML = '';
+    if (a == null || a == "") {
+        // alert("Name must be filled out");
+        error++;
+        document.getElementById('name_error').innerHTML = 'POOR';
+    }
+
+    var b = document.forms["student_reg"]["lname"].value;
+    document.getElementById('lname_error').innerHTML = '';
+    if (b == null || b == "") {
+        // alert("Email must be filled out");
+        error++;
+        document.getElementById('lname_error').innerHTML = 'POOR';
+    }
+
+    var c = document.forms["student_reg"]["email"].value;
+    document.getElementById('email_error').innerHTML = '';
+    if (c == null || c == "") {
+        // alert("Username must be filled out");
+        error++;
+        document.getElementById('email_error').innerHTML = 'POOR';
+    }
+
+    var d = document.forms["student_reg"]["password"].value;
+    document.getElementById('password_error').innerHTML = '';
+    if (d == null || d == "") {
+        // alert("Password must be filled out");
+        error++;
+        document.getElementById('password_error').innerHTML = 'POOR';
+    }
+    var d1=document.forms["student_reg"]["repassword"].value;
+    document.getElementById('repassword_error').innerHTML='';
+    if(d1==null || d1==""){
+      error++;
+      document.getElementById('repassword_error').innerHTML='POOR';
+    }
+    var d2=document.forms["student_reg"]["age"].value;
+    document.getElementById('age_error').innerHTML='';
+    if(d2==null||d2==""){
+      error++;
+      document.getElementById('age_error').innerHTML='POOR';
+    }
+
+    var e = document.forms["student_reg"]["phone_no"].value;
+    document.getElementById('phone_no_error').innerHTML = '';
+    if (e == null || e == "") {
+        // alert("Roll no must be filled out");
+        error++;
+        document.getElementById('phone_no_error').innerHTML = 'POOR';
+    }
+    var f=document.forms["student_reg"]["addr"].value;
+    document.getElementById('addr_error').innerHTML='';
+    if(f==null||f==""){
+      error++;
+      document.getElementById('addr_error').innerHTML='POOR';
+    }
+    var g=document.forms["student_reg"]["state"].value;
+    document.getElementById('state_error').innerHTML='';
+    if(g==null||g==""){
+      error++;
+      document.getElementById('state_error').innerHTML='POOR';
+    }
+
+    if(error>0) {
+        return false;
+    }
+    return true;
+}
+    </script>
+</html>
